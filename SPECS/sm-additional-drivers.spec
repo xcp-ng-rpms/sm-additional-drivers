@@ -1,7 +1,7 @@
 Summary: Additional storage drivers for sm
 Name:    sm-additional-drivers
 Version: 0.2.1
-Release: 1%{dist}
+Release: 1%{?dist}
 License: LGPLv2
 URL: https://github.com/xcp-ng/sm-additional-drivers
 Source0: https://github.com/xcp-ng/%{name}/archive/v%{version}/%{name}-%{version}.tar.gz
