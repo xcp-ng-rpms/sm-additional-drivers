@@ -17,6 +17,8 @@ This package contains additional storage drivers for sm
 %prep
 %autosetup -p1
 
+%build
+
 %install
 install -d -m 0755 %{buildroot}/opt/xensource/sm
 install -m 0755 EXT4SR.py %{buildroot}/opt/xensource/sm
