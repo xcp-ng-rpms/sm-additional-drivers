@@ -1,7 +1,7 @@
 Summary: Additional storage drivers for sm
 Name:    sm-additional-drivers
 Version: 0.2.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 License: LGPLv2
 URL: https://github.com/xcp-ng/sm-additional-drivers
 Source0: https://github.com/xcp-ng/%{name}/archive/v%{version}/%{name}-%{version}.tar.gz
@@ -63,6 +63,9 @@ fi
 %config /etc/xapi.conf.d/sm-additional-drivers.conf
 
 %changelog
+* Fri Dec 20 2019 Samuel Verschelde <stormi-xcp@ylix.fr> - 0.2.1-2
+- Rebuild for XCP-ng 8.1
+
 * Mon Jan 21 2019 Samuel Verschelde <stormi-xcp@ylix.fr> - 0.2.1-1
 - Remove unknown -F parameter to mkfs.xfs
 
