@@ -1,7 +1,7 @@
 Summary: Additional storage drivers for sm
 Name:    sm-additional-drivers
-Version: 0.2.1
-Release: 2%{?dist}
+Version: 0.3.0
+Release: 1%{?dist}
 License: LGPLv2
 URL: https://github.com/xcp-ng/sm-additional-drivers
 Source0: https://github.com/xcp-ng/%{name}/archive/v%{version}/%{name}-%{version}.tar.gz
@@ -63,6 +63,11 @@ fi
 %config /etc/xapi.conf.d/sm-additional-drivers.conf
 
 %changelog
+* Thu Feb 20 2020 Samuel Verschelde <stormi-xcp@ylix.fr> - 0.3.0-1
+- EXTSR now defaults to ext4 so EXT4SR is now deprecated
+- Raise an exception if someone attempts to create a SR with type ext4
+- Keep the EXT4SR driver for existing SRs... For now...
+
 * Fri Dec 20 2019 Samuel Verschelde <stormi-xcp@ylix.fr> - 0.2.1-2
 - Rebuild for XCP-ng 8.1
 
