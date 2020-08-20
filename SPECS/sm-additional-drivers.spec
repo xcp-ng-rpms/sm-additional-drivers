@@ -1,7 +1,7 @@
 Summary: Additional storage drivers for sm
 Name:    sm-additional-drivers
 Version: 0.3.0
-Release: 1%{?dist}
+Release: 1.0.linstor.1%{?dist}
 License: LGPLv2
 URL: https://github.com/xcp-ng/sm-additional-drivers
 Source0: https://github.com/xcp-ng/%{name}/archive/v%{version}/%{name}-%{version}.tar.gz
@@ -37,7 +37,7 @@ WHITELIST_ORIG=$(grep /etc/xapi.conf -e "^sm-plugins=")
 cat << EOF > /etc/xapi.conf.d/sm-additional-drivers.conf
 # This overrides sm-plugins from xapi.conf to take additional storage drivers into account.
 # This file is re-created each time either xapi-core or sm-additional-drivers is updated.
-$WHITELIST_ORIG ext4 xfs
+$WHITELIST_ORIG ext4 xfs linstor
 EOF
 
 %postun
@@ -63,6 +63,9 @@ fi
 %config /etc/xapi.conf.d/sm-additional-drivers.conf
 
 %changelog
+* Thu Aug 20 2020 Ronan Abhamon <ronan.abhamon@vates.fr> - 0.3.0-1.0.linstor.1
+- Add linstor SM driver in the plugin list
+
 * Thu Feb 20 2020 Samuel Verschelde <stormi-xcp@ylix.fr> - 0.3.0-1
 - EXTSR now defaults to ext4 so EXT4SR is now deprecated
 - Raise an exception if someone attempts to create a SR with type ext4
